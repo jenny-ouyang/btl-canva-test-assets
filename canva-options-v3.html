@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Onboard to Claude — Design Options v3 (polished)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--lav:#F0EBFF;--lav2:#E9DBFF;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--sep:#E5E7EB;
+    --elev:0 0 0 1px #ECE7F5, 0 26px 50px -16px rgba(107,47,208,.22);}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:'Nunito',sans-serif;}
+  .page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;}
+  .tex{position:absolute;inset:0;background-image:radial-gradient(#E7DEFA 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.55;z-index:0;}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:28px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+  .edot{width:18px;height:18px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .hl{background:var(--lav2);color:var(--accent);border-radius:12px;padding:2px 16px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .ft{position:absolute;bottom:46px;font-family:'Barlow Semi Condensed',sans-serif;font-size:28px;font-weight:600;color:#9CA3AF;z-index:2;}
+
+  /* ===== 1. Before / After — widened gutter so VS sits in clear space ===== */
+  .p-ba{display:flex;}
+  .p-ba .col{width:540px;height:1080px;display:flex;flex-direction:column;z-index:1;}
+  .p-ba .left{padding:104px 92px 104px 60px;opacity:.92;}
+  .p-ba .right{margin:70px 48px 128px 84px;background:var(--card);border-radius:34px;box-shadow:var(--elev);padding:64px 46px;}
+  .p-ba .lbl{font-size:27px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;}
+  .p-ba .left .lbl{color:var(--muted);}
+  .p-ba .right .lbl{color:var(--accent);}
+  .p-ba .big{font-size:130px;font-weight:900;line-height:.9;}
+  .p-ba .left .big{color:#AFA9B8;}
+  .p-ba .right .big{color:var(--accent);}
+  .p-ba .biglabel{font-size:42px;font-weight:800;color:var(--ink);margin-bottom:40px;}
+  .p-ba .item{display:flex;align-items:center;gap:18px;font-family:'Barlow Semi Condensed',sans-serif;font-size:34px;font-weight:500;margin-bottom:24px;color:var(--body);}
+  .p-ba .chip{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px;color:#fff;}
+  .p-ba .left .item{color:var(--muted);}
+  .p-ba .left .chip{background:#C9C4D2;}
+  .p-ba .right .chip{background:var(--accent);}
+  .p-ba .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:112px;height:112px;border-radius:50%;background:var(--accent);color:#fff;font-size:42px;font-weight:900;letter-spacing:1px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px var(--canvas),0 16px 32px rgba(107,47,208,.32);z-index:5;}
+  .p-ba .ft{left:0;width:1080px;text-align:center;}
+
+  /* ===== 2. Timeline ===== */
+  .p-tl .content{position:absolute;inset:0;padding:84px 90px;z-index:1;}
+  .p-tl .title{font-size:66px;font-weight:900;color:var(--ink);line-height:1.18;margin-top:16px;}
+  .p-tl .steps{position:relative;margin-top:54px;padding-left:6px;}
+  .p-tl .spine{position:absolute;left:42px;top:30px;bottom:30px;width:8px;border-radius:4px;background:linear-gradient(180deg,var(--accent),var(--secondary));}
+  .p-tl .row{position:relative;display:flex;align-items:center;gap:34px;margin-bottom:30px;z-index:1;}
+  .p-tl .dot{flex:0 0 auto;width:80px;height:80px;border-radius:50%;background:var(--accent);color:#fff;font-size:40px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 9px var(--canvas),0 10px 20px rgba(107,47,208,.30);}
+  .p-tl .row:nth-child(odd) .dot{background:var(--secondary);}
+  .p-tl .scard{flex:1;background:var(--card);border-radius:22px;box-shadow:var(--elev);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .p-tl .label{font-size:42px;font-weight:800;color:var(--ink);}
+  .p-tl .time{flex:0 0 auto;font-family:'Barlow Semi Condensed',sans-serif;font-size:26px;font-weight:600;color:var(--accent);background:var(--lav);border-radius:20px;padding:6px 18px;}
+  .p-tl .ft{left:90px;}
+
+  /* ===== 3. Stat grid ===== */
+  .p-sg .content{position:absolute;inset:0;padding:84px 84px;display:flex;flex-direction:column;z-index:1;}
+  .p-sg .title{font-size:58px;font-weight:900;color:var(--ink);line-height:1.04;margin-top:14px;margin-bottom:40px;}
+  .p-sg .hero{background:var(--lav);border-radius:30px;box-shadow:var(--elev);padding:44px 50px;display:flex;align-items:baseline;gap:20px;margin-bottom:32px;}
+  .p-sg .hero .n{font-size:150px;font-weight:900;color:var(--accent);line-height:.82;}
+  .p-sg .hero .u{font-size:62px;font-weight:900;color:var(--ink);}
+  .p-sg .hero .t{font-family:'Barlow Semi Condensed',sans-serif;font-size:38px;font-weight:600;color:var(--body);margin-left:auto;max-width:320px;text-align:right;}
+  .p-sg .row3{display:flex;gap:30px;}
+  .p-sg .tile{flex:1;background:var(--card);border-radius:26px;box-shadow:var(--elev);padding:40px 36px;}
+  .p-sg .tile .n{font-size:104px;font-weight:900;color:var(--accent);line-height:.85;}
+  .p-sg .tile:nth-child(2) .n{color:var(--secondary);}
+  .p-sg .tile .l{font-family:'Barlow Semi Condensed',sans-serif;font-size:32px;font-weight:600;color:var(--body);margin-top:8px;line-height:1.1;}
+  .p-sg .ft{left:84px;}
+
+  /* ===== 4. Hero quote (dark) ===== */
+  .p-q{background:var(--ink);}
+  .p-q .glow{position:absolute;width:680px;height:680px;border-radius:50%;background:rgba(139,92,246,.30);right:-220px;top:-240px;filter:blur(10px);z-index:0;}
+  .p-q .content{position:absolute;inset:0;padding:100px 96px;display:flex;flex-direction:column;z-index:1;}
+  .p-q .eyebrow{color:#C9B6F5;}
+  .p-q .edot{background:#C9B6F5;}
+  .p-q .mark{font-size:300px;font-weight:900;color:rgba(201,182,245,.30);line-height:.55;margin:18px 0 -30px;}
+  .p-q .quote{margin-top:auto;font-size:92px;font-weight:900;color:#F8F6FF;line-height:1.16;}
+  .p-q .quote .hl{background:var(--accent);color:#fff;border-radius:14px;padding:2px 18px;}
+  .p-q .author{display:flex;align-items:center;gap:22px;margin-top:46px;margin-bottom:auto;}
+  .p-q .av{width:78px;height:78px;border-radius:50%;background:var(--accent);color:#fff;font-size:34px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+  .p-q .aname{font-family:'Barlow Semi Condensed',sans-serif;font-size:40px;font-weight:600;color:#F8F6FF;line-height:1.1;}
+  .p-q .ahandle{font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:500;color:#A7A2B3;}
+  .p-q .ft{left:96px;color:#8C8697;}
+</style></head>
+<body>
+
+<div class="page p-ba" data-document-role="page" data-label="Before / After v3">
+  <div class="tex"></div>
+  <div class="col left">
+    <div class="lbl">The old way</div>
+    <div class="big">20</div><div class="biglabel">days, still stuck</div>
+    <div class="item"><span class="chip">✕</span>Wing it, no setup</div>
+    <div class="item"><span class="chip">✕</span>Start from zero daily</div>
+    <div class="item"><span class="chip">✕</span>Never reaches the team</div>
+  </div>
+  <div class="col right">
+    <div class="lbl">The setup</div>
+    <div class="big">20</div><div class="biglabel">minutes, done</div>
+    <div class="item"><span class="chip">✓</span>The right plugin first</div>
+    <div class="item"><span class="chip">✓</span>Claude already knows you</div>
+    <div class="item"><span class="chip">✓</span>Team-ready, no training</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+
+<div class="page p-tl" data-document-role="page" data-label="Timeline v3">
+  <div class="tex"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="title">Onboard to Claude in<br><span class="hl">20 minutes</span></div>
+    <div class="steps">
+      <div class="spine"></div>
+      <div class="row"><div class="dot">1</div><div class="scard"><span class="label">Set up Claude Desktop</span><span class="time">~10 min</span></div></div>
+      <div class="row"><div class="dot">2</div><div class="scard"><span class="label">Get Claude to know you</span><span class="time">~3 min</span></div></div>
+      <div class="row"><div class="dot">3</div><div class="scard"><span class="label">Know the layers</span><span class="time">~2 min</span></div></div>
+      <div class="row"><div class="dot">4</div><div class="scard"><span class="label">Install the right plugin</span><span class="time">~3 min</span></div></div>
+      <div class="row"><div class="dot">5</div><div class="scard"><span class="label">Roll it out to a team</span><span class="time">~2 min</span></div></div>
+    </div>
+  </div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+
+<div class="page p-sg" data-document-role="page" data-label="Stat grid v3">
+  <div class="tex"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="title">The 20-minute setup, by the numbers</div>
+    <div class="hero"><span class="n">20</span><span class="u">min</span><span class="t">start to a team-ready Claude</span></div>
+    <div class="row3">
+      <div class="tile"><div class="n">10</div><div class="l">min to set up Desktop</div></div>
+      <div class="tile"><div class="n">5</div><div class="l">steps, start to done</div></div>
+      <div class="tile"><div class="n">0</div><div class="l">training programs</div></div>
+    </div>
+  </div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+
+<div class="page p-q" data-document-role="page" data-label="Hero quote v3 (dark)">
+  <div class="glow"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="mark">&ldquo;</div>
+    <div class="quote">Most people stall on the <span class="hl">setup</span>, not the tool.</div>
+    <div class="author"><span class="av">JO</span><div><div class="aname">Jenny Ouyang</div><div class="ahandle">buildtolaunch.substack.com</div></div></div>
+  </div>
+  <div class="ft">Build to Launch</div>
+</div>
+
+</body></html>
