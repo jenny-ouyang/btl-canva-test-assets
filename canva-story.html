@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboard to Claude — Story 9:16</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--lav:#F0EBFF;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--sep:#E5E7EB;}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:'Nunito',sans-serif;display:inline-block;}
+  .page{position:relative;width:1080px;height:1920px;background:var(--canvas);overflow:hidden;}
+  .accent{position:absolute;top:0;left:0;width:1080px;height:20px;background:var(--accent);}
+  .blob{position:absolute;width:620px;height:620px;border-radius:50%;background:var(--lav);left:-200px;bottom:-220px;}
+  .content{position:absolute;inset:0;padding:150px 90px 130px;display:flex;flex-direction:column;}
+  .eyebrow{font-size:32px;font-weight:800;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;}
+  .hook{font-size:92px;font-weight:900;color:var(--ink);line-height:1.04;margin-bottom:64px;}
+  .hook .hl{color:var(--accent);}
+  .steps{display:flex;flex-direction:column;gap:28px;}
+  .step{display:flex;align-items:center;gap:30px;background:var(--card);border-radius:20px;padding:34px 36px;box-shadow:0 0 0 1px var(--sep);}
+  .badge{flex:0 0 auto;width:84px;height:84px;border-radius:50%;background:var(--accent);color:#fff;font-size:46px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .step:nth-child(even) .badge{background:var(--secondary);}
+  .label{font-size:50px;font-weight:800;color:var(--ink);margin:0;line-height:1.04;}
+  .cta{position:absolute;left:90px;bottom:64px;font-family:'Barlow Semi Condensed',sans-serif;font-size:38px;font-weight:600;color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="page" data-document-role="page" data-label="Onboard to Claude Story">
+  <div class="accent"></div>
+  <div class="blob"></div>
+  <div class="content">
+    <div class="eyebrow">Build to Launch</div>
+    <div class="hook">Onboard to Claude in <span class="hl">20 minutes</span>, not 20 days.</div>
+    <div class="steps">
+      <div class="step"><div class="badge">1</div><p class="label">Set up Claude Desktop</p></div>
+      <div class="step"><div class="badge">2</div><p class="label">Get Claude to know you</p></div>
+      <div class="step"><div class="badge">3</div><p class="label">Know the layers</p></div>
+      <div class="step"><div class="badge">4</div><p class="label">Install the right plugin</p></div>
+      <div class="step"><div class="badge">5</div><p class="label">Roll it out to a team</p></div>
+    </div>
+  </div>
+  <div class="cta">Full 5-step setup at buildtolaunch.substack.com</div>
+</div>
+</body>
+</html>
