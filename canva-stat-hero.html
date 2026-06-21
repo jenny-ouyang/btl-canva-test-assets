@@ -9,18 +9,17 @@
   *{box-sizing:border-box;margin:0;}
   body{font-family:'Nunito',sans-serif;display:inline-block;}
   .page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;}
-  .blob{position:absolute;width:560px;height:560px;border-radius:50%;background:var(--lav);right:-180px;top:-200px;}
+  .blob{position:absolute;width:520px;height:520px;border-radius:50%;background:var(--lav);right:-180px;top:-200px;}
   .content{position:absolute;inset:0;padding:96px 100px;display:flex;flex-direction:column;z-index:1;}
   .eyebrow{font-size:30px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
   .rule{width:96px;height:6px;border-radius:3px;background:var(--accent);margin-top:18px;}
   .hero{margin-top:auto;margin-bottom:auto;}
-  .kicker{font-family:'Barlow Semi Condensed',sans-serif;font-size:46px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:-10px;}
-  .metric{display:flex;align-items:baseline;gap:24px;}
-  .metric .num{font-size:420px;font-weight:900;color:var(--accent);line-height:.85;letter-spacing:-8px;}
-  .metric .unit{font-size:120px;font-weight:900;color:var(--ink);line-height:1;}
-  .contrast{font-size:54px;font-weight:700;color:var(--body);margin-top:18px;}
+  .kicker{font-family:'Barlow Semi Condensed',sans-serif;font-size:48px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
+  .num{font-size:340px;font-weight:900;color:var(--accent);line-height:.92;letter-spacing:-6px;}
+  .unit{font-size:128px;font-weight:900;color:var(--ink);line-height:1;margin-top:-8px;}
+  .contrast{font-size:52px;font-weight:700;color:var(--body);margin-top:40px;}
   .contrast s{color:var(--muted);text-decoration-thickness:5px;}
-  .callout{border-left:6px solid var(--accent);padding:6px 22px;margin-top:50px;font-family:'Barlow Semi Condensed',sans-serif;font-style:italic;font-weight:600;font-size:40px;color:var(--body);}
+  .callout{border-left:6px solid var(--accent);padding:6px 22px;margin-top:46px;font-family:'Barlow Semi Condensed',sans-serif;font-style:italic;font-weight:600;font-size:40px;color:var(--body);}
   .footer{border-top:1px solid var(--sep);padding-top:26px;font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:600;color:#9CA3AF;}
 </style>
 </head>
@@ -31,7 +30,8 @@
     <div><div class="eyebrow">Build to Launch</div><div class="rule"></div></div>
     <div class="hero">
       <div class="kicker">Onboard to Claude in</div>
-      <div class="metric"><span class="num">20</span><span class="unit">minutes</span></div>
+      <div class="num">20</div>
+      <div class="unit">minutes</div>
       <div class="contrast">Not <s>20 days</s>. The whole curve is the setup.</div>
     </div>
     <div class="callout">Most people stall on the setup, not the tool.</div>
