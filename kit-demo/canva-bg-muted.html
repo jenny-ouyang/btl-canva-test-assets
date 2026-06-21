@@ -10,8 +10,7 @@
   /* muted overlay: darken + tint toward ink/purple so any text reads */
   .overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(31,41,55,.72) 0%, rgba(31,41,55,.62) 50%, rgba(43,28,74,.78) 100%);}
   .content{position:absolute;inset:0;padding:110px 100px;display:flex;flex-direction:column;z-index:2;}
-  .eyebrow{display:flex;align-items:center;gap:14px;font-size:30px;font-weight:800;color:#C9B6F5;letter-spacing:2px;text-transform:uppercase;}
-  .edot{width:18px;height:18px;border-radius:50%;background:#C9B6F5;display:inline-block;}
+  .eyebrow{font-size:30px;font-weight:800;color:#C9B6F5;letter-spacing:2px;text-transform:uppercase;}
   .q{margin-top:auto;font-size:92px;font-weight:900;color:#F8F6FF;line-height:1.1;}
   .q .hl{background:var(--accent);color:#fff;border-radius:14px;padding:2px 18px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
   .ft{margin-top:auto;font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:600;color:#A7A2B3;}
@@ -21,7 +20,7 @@
   <img class="bg" src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/bg-source_workspace.png" alt="workspace">
   <div class="overlay"></div>
   <div class="content">
-    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
     <div class="q">Most people stall on the <span class="hl">setup</span>, not the tool.</div>
     <div class="ft">buildtolaunch.substack.com</div>
   </div>
