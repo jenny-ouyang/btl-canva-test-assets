@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Onboard to Claude — Story 9:16</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--lav:#F0EBFF;--lav2:#E9DBFF;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--sep:#E5E7EB;
+    --elev:0 0 0 1px #ECE7F5, 0 26px 50px -16px rgba(107,47,208,.22);}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:'Nunito',sans-serif;}
+  .page{position:relative;width:1080px;height:1920px;background:var(--canvas);overflow:hidden;}
+  .tex{position:absolute;inset:0;background-image:radial-gradient(#E7DEFA 2.5px,transparent 2.6px);background-size:50px 50px;opacity:.55;z-index:0;}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:32px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+  .edot{width:20px;height:20px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .hl{background:var(--lav2);color:var(--accent);border-radius:14px;padding:2px 18px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .ft{position:absolute;bottom:80px;font-family:'Barlow Semi Condensed',sans-serif;font-size:32px;font-weight:600;color:#9CA3AF;z-index:2;}
+
+  /* Story 1: Timeline */
+  .p-tl .content{position:absolute;inset:0;padding:130px 100px;z-index:1;}
+  .p-tl .title{font-size:96px;font-weight:900;color:var(--ink);line-height:1.14;margin-top:24px;}
+  .p-tl .steps{position:relative;margin-top:96px;}
+  .p-tl .spine{position:absolute;left:52px;top:40px;bottom:40px;width:10px;border-radius:5px;background:linear-gradient(180deg,var(--accent),var(--secondary));}
+  .p-tl .row{position:relative;display:flex;align-items:center;gap:42px;margin-bottom:50px;z-index:1;}
+  .p-tl .dot{flex:0 0 auto;width:104px;height:104px;border-radius:50%;background:var(--accent);color:#fff;font-size:52px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 11px var(--canvas),0 12px 24px rgba(107,47,208,.30);}
+  .p-tl .row:nth-child(odd) .dot{background:var(--secondary);}
+  .p-tl .scard{flex:1;background:var(--card);border-radius:26px;box-shadow:var(--elev);padding:34px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .p-tl .label{font-size:50px;font-weight:800;color:var(--ink);}
+  .p-tl .time{flex:0 0 auto;font-family:'Barlow Semi Condensed',sans-serif;font-size:32px;font-weight:600;color:var(--accent);background:var(--lav);border-radius:24px;padding:8px 22px;}
+  .p-tl .ft{left:100px;}
+
+  /* Story 2: Hero quote (dark) */
+  .p-q{background:var(--ink);}
+  .p-q .glow{position:absolute;width:820px;height:820px;border-radius:50%;background:rgba(139,92,246,.30);right:-260px;top:-300px;filter:blur(12px);z-index:0;}
+  .p-q .content{position:absolute;inset:0;padding:140px 110px;display:flex;flex-direction:column;z-index:1;}
+  .p-q .eyebrow{color:#C9B6F5;}
+  .p-q .edot{background:#C9B6F5;}
+  .p-q .mark{font-size:420px;font-weight:900;color:rgba(201,182,245,.30);line-height:.5;margin:40px 0 -20px;}
+  .p-q .quote{margin-top:auto;font-size:128px;font-weight:900;color:#F8F6FF;line-height:1.12;}
+  .p-q .quote .hl{background:var(--accent);color:#fff;border-radius:18px;padding:2px 22px;}
+  .p-q .author{display:flex;align-items:center;gap:28px;margin-top:70px;margin-bottom:auto;}
+  .p-q .av{width:104px;height:104px;border-radius:50%;background:var(--accent);color:#fff;font-size:44px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+  .p-q .aname{font-family:'Barlow Semi Condensed',sans-serif;font-size:52px;font-weight:600;color:#F8F6FF;line-height:1.1;}
+  .p-q .ahandle{font-family:'Barlow Semi Condensed',sans-serif;font-size:38px;font-weight:500;color:#A7A2B3;}
+  .p-q .ft{left:110px;color:#8C8697;}
+</style></head>
+<body>
+
+<div class="page p-tl" data-document-role="page" data-label="Story — Timeline">
+  <div class="tex"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="title">Onboard to Claude in<br><span class="hl">20 minutes</span></div>
+    <div class="steps">
+      <div class="spine"></div>
+      <div class="row"><div class="dot">1</div><div class="scard"><span class="label">Set up Claude Desktop</span><span class="time">~10 min</span></div></div>
+      <div class="row"><div class="dot">2</div><div class="scard"><span class="label">Get Claude to know you</span><span class="time">~3 min</span></div></div>
+      <div class="row"><div class="dot">3</div><div class="scard"><span class="label">Know the layers</span><span class="time">~2 min</span></div></div>
+      <div class="row"><div class="dot">4</div><div class="scard"><span class="label">Install the right plugin</span><span class="time">~3 min</span></div></div>
+      <div class="row"><div class="dot">5</div><div class="scard"><span class="label">Roll it out to a team</span><span class="time">~2 min</span></div></div>
+    </div>
+  </div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+
+<div class="page p-q" data-document-role="page" data-label="Story — Quote">
+  <div class="glow"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="mark">&ldquo;</div>
+    <div class="quote">Most people stall on the <span class="hl">setup</span>, not the tool.</div>
+    <div class="author"><span class="av">JO</span><div><div class="aname">Jenny Ouyang</div><div class="ahandle">buildtolaunch.substack.com</div></div></div>
+  </div>
+  <div class="ft">Build to Launch</div>
+</div>
+
+</body></html>

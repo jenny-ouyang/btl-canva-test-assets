@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Onboard to Claude — X 16:9</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--lav:#F0EBFF;--lav2:#E9DBFF;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--sep:#E5E7EB;
+    --elev:0 0 0 1px #ECE7F5, 0 24px 46px -16px rgba(107,47,208,.22);}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:'Nunito',sans-serif;}
+  .page{position:relative;width:1600px;height:900px;background:var(--canvas);overflow:hidden;}
+  .tex{position:absolute;inset:0;background-image:radial-gradient(#E7DEFA 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.55;z-index:0;}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:28px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+  .edot{width:18px;height:18px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .hl{background:var(--lav2);color:var(--accent);border-radius:14px;padding:2px 18px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .ft{position:absolute;bottom:46px;font-family:'Barlow Semi Condensed',sans-serif;font-size:28px;font-weight:600;color:#9CA3AF;z-index:2;}
+
+  /* X 1: Before / After (landscape) */
+  .p-ba{display:flex;}
+  .p-ba .col{width:800px;height:900px;display:flex;flex-direction:column;justify-content:center;z-index:1;}
+  .p-ba .left{padding:80px 120px 80px 100px;opacity:.92;}
+  .p-ba .right{margin:64px 90px 64px 120px;background:var(--card);border-radius:34px;box-shadow:var(--elev);padding:64px 64px;justify-content:center;}
+  .p-ba .lbl{font-size:27px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;}
+  .p-ba .left .lbl{color:var(--muted);}
+  .p-ba .right .lbl{color:var(--accent);}
+  .p-ba .big{font-size:128px;font-weight:900;line-height:.9;}
+  .p-ba .left .big{color:#AFA9B8;}
+  .p-ba .right .big{color:var(--accent);}
+  .p-ba .biglabel{font-size:40px;font-weight:800;color:var(--ink);margin-bottom:34px;}
+  .p-ba .item{display:flex;align-items:center;gap:18px;font-family:'Barlow Semi Condensed',sans-serif;font-size:33px;font-weight:500;margin-bottom:20px;color:var(--body);}
+  .p-ba .chip{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:25px;color:#fff;}
+  .p-ba .left .item{color:var(--muted);}
+  .p-ba .left .chip{background:#C9C4D2;}
+  .p-ba .right .chip{background:var(--accent);}
+  .p-ba .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:112px;height:112px;border-radius:50%;background:var(--accent);color:#fff;font-size:42px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px var(--canvas),0 16px 32px rgba(107,47,208,.32);z-index:5;}
+  .p-ba .ft{left:0;width:1600px;text-align:center;}
+
+  /* X 2: Hero quote (dark, landscape) */
+  .p-q{background:var(--ink);}
+  .p-q .glow{position:absolute;width:760px;height:760px;border-radius:50%;background:rgba(139,92,246,.30);right:-240px;top:-280px;filter:blur(12px);z-index:0;}
+  .p-q .content{position:absolute;inset:0;padding:96px 110px;display:flex;flex-direction:column;z-index:1;}
+  .p-q .eyebrow{color:#C9B6F5;}
+  .p-q .edot{background:#C9B6F5;}
+  .p-q .mark{font-size:240px;font-weight:900;color:rgba(201,182,245,.30);line-height:.5;margin:8px 0 -24px;}
+  .p-q .quote{margin-top:auto;font-size:104px;font-weight:900;color:#F8F6FF;line-height:1.1;max-width:1320px;}
+  .p-q .quote .hl{background:var(--accent);color:#fff;border-radius:16px;padding:2px 20px;}
+  .p-q .author{display:flex;align-items:center;gap:24px;margin-top:48px;margin-bottom:auto;}
+  .p-q .av{width:84px;height:84px;border-radius:50%;background:var(--accent);color:#fff;font-size:36px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+  .p-q .aname{font-family:'Barlow Semi Condensed',sans-serif;font-size:42px;font-weight:600;color:#F8F6FF;line-height:1.1;}
+  .p-q .ahandle{font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:500;color:#A7A2B3;}
+  .p-q .ft{left:110px;color:#8C8697;}
+</style></head>
+<body>
+
+<div class="page p-ba" data-document-role="page" data-label="X — Before / After">
+  <div class="tex"></div>
+  <div class="col left">
+    <div class="lbl">The old way</div>
+    <div class="big">20</div><div class="biglabel">days, still stuck</div>
+    <div class="item"><span class="chip">✕</span>Wing it, no setup</div>
+    <div class="item"><span class="chip">✕</span>Start from zero daily</div>
+    <div class="item"><span class="chip">✕</span>Never reaches the team</div>
+  </div>
+  <div class="col right">
+    <div class="lbl">The setup</div>
+    <div class="big">20</div><div class="biglabel">minutes, done</div>
+    <div class="item"><span class="chip">✓</span>The right plugin first</div>
+    <div class="item"><span class="chip">✓</span>Claude already knows you</div>
+    <div class="item"><span class="chip">✓</span>Team-ready, no training</div>
+  </div>
+  <div class="vs">VS</div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+
+<div class="page p-q" data-document-role="page" data-label="X — Quote">
+  <div class="glow"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
+    <div class="mark">&ldquo;</div>
+    <div class="quote">Most people stall on the <span class="hl">setup</span>, not the tool.</div>
+    <div class="author"><span class="av">JO</span><div><div class="aname">Jenny Ouyang</div><div class="ahandle">buildtolaunch.substack.com</div></div></div>
+  </div>
+  <div class="ft">Build to Launch</div>
+</div>
+
+</body></html>
