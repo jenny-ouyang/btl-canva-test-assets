@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BTL Font Sampler — all fonts, one page</title>
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Baloo+2:wght@400;600;700&family=Caveat:wght@400;700&family=Caveat+Brush&family=Comfortaa:wght@400;700&family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;600&family=Gloria+Hallelujah&family=Gochi+Hand&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Kaushan+Script&family=Nunito:wght@400;600;700;800&family=Pacifico&family=Patrick+Hand&family=Permanent+Marker&family=Poppins:wght@400;600;700&family=Quicksand:wght@400;500;700&family=Satisfy&family=Schoolbell&family=Shantell+Sans:wght@300;400;500;600;700&family=Sriracha&family=Varela+Round&family=Barlow+Condensed:wght@400;500;600&family=Barlow+Semi+Condensed:wght@400;500;600&family=Roboto+Condensed:wght@400;700&family=Saira+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --accent:#6B2FD0; --secondary:#8B5CF6; --canvas:#F9F9F5; --card:#FFFFFF;
+         --ink:#1F2937; --body:#4B5563; --muted:#6B7280; --sep:#E5E7EB; --orange:#E2A33C; }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#EDEDE7;padding:36px 22px 70px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  .intro h1{font-size:24px;color:var(--ink);margin:0 0 8px;}
+  .decisions{background:#fff;border-radius:12px;box-shadow:0 0 0 1px var(--sep);padding:16px 22px;margin:0 0 10px;font-size:14px;color:var(--body);line-height:1.6;}
+  .decisions b{color:var(--ink);}
+  .legend{font-size:12px;color:var(--muted);margin:0 0 22px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:4px;vertical-align:middle;}
+  .in{background:#E7F6EC;color:#1B7F3B;} .out{background:#FBEAEA;color:#B42318;} .rec{background:#6B2FD0;color:#fff;}
+  h2.sec{font-size:16px;color:var(--ink);margin:30px 0 12px;border-bottom:2px solid var(--accent);padding-bottom:6px;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+  .card{background:var(--canvas);border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--sep),0 6px 18px rgba(31,41,55,.07);}
+  .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 20px;background:#fff;border-bottom:1px solid var(--sep);}
+  .meta .name{font-size:14px;font-weight:700;color:var(--accent);}
+  .meta .note{font-size:11px;color:var(--muted);text-align:right;line-height:1.3;}
+  .sample{padding:22px 24px 26px;}
+  .eyebrow{font-size:16px;font-weight:700;color:var(--accent);margin:0 0 3px;}
+  .title{font-size:36px;line-height:1.05;color:var(--ink);margin:0 0 3px;}
+  .sub{font-size:19px;color:var(--body);margin:0 0 14px;}
+  .rule{border-bottom:2px solid var(--accent);margin:0 0 14px;}
+  .step{display:flex;align-items:center;gap:13px;background:#fff;border-radius:11px;padding:10px 15px;box-shadow:0 0 0 1px var(--sep);}
+  .badge{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;}
+  .label{font-size:21px;line-height:1.05;color:var(--ink);margin:0;}
+  .frag{font-size:15px;color:var(--muted);margin:1px 0 0;}
+  @media(max-width:720px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="intro">
+    <h1>BTL fonts — every option, one page</h1>
+    <div class="decisions">
+      <b>Decisions:</b> Rounded = <b>Nunito</b> ✅ locked (in Canva). &nbsp; Handwritten = <b>Shantell Sans</b> (pick a weight — shown 300/400; ⚠️ <b>not in Canva → native-PNG only</b>). &nbsp; If you want the handwritten editable in Canva, the closest Canva matches are <b>Patrick Hand</b> / Kalam / Caveat / Comic Neue.
+    </div>
+    <p class="legend"><span class="tag in">in Canva</span> usable in the Canva editor &nbsp; <span class="tag out">not in Canva</span> native-PNG path only &nbsp; <span class="tag rec">pick</span> my recommendation</p>
+  </div>
+
+  <h2 class="sec">Rounded &amp; readable (most used in images)</h2>
+  <div class="grid" id="g-round"></div>
+
+  <h2 class="sec">Handwritten — clean &amp; readable</h2>
+  <div class="grid" id="g-hand"></div>
+
+  <h2 class="sec">Script &amp; marker</h2>
+  <div class="grid" id="g-script"></div>
+
+  <h2 class="sec">Narrow body companions — Nunito header + narrow paragraph (for content-heavy designs)</h2>
+  <div class="grid" id="g-narrow"></div>
+</div>
+
+<script>
+// === EDIT YOUR SAMPLE WORDS HERE (one place, used by every font card) ===
+const SAMPLE = {
+  eyebrow: "Build to Launch",
+  title:   "Onboard to Claude in 20 Minutes",
+  sub:     "No learning curve — the right setup",
+  label:   "Set up Claude Desktop",
+  frag:    "Under 10 minutes"
+};
+// [css font-family, weight, display name, canva 'in'/'out', note, pick bool]
+const round = [
+  ["'Nunito',sans-serif","800","Nunito","in","round, most readable",true],
+  ["'Poppins',sans-serif","700","Poppins","in","industry default",false],
+  ["'Quicksand',sans-serif","700","Quicksand","in","light geometric round",false],
+  ["'Comfortaa',sans-serif","700","Comfortaa","in","very round, soft",false],
+  ["'Fredoka',sans-serif","600","Fredoka (One)","in","rounded display, playful",false],
+  ["'Baloo 2',cursive","700","Baloo 2","out","chunky round headlines",false],
+  ["'Varela Round',sans-serif","400","Varela Round","out","simple round sans",false],
+];
+const hand = [
+  ["'Shantell Sans'","300","Shantell Sans · 300","out","thin — your pick, native-PNG only",true],
+  ["'Shantell Sans'","400","Shantell Sans · 400","out","regular weight, native-PNG only",false],
+  ["'Patrick Hand',cursive","400","Patrick Hand","in","Canva's closest Shantell match",true],
+  ["'Kalam',cursive","400","Kalam","in","smooth, readable",false],
+  ["'Caveat',cursive","400","Caveat","in","neat playful hand",false],
+  ["'Comic Neue',cursive","700","Comic Neue","in","clean Comic Sans, friendly",false],
+  ["'Architects Daughter',cursive","400","Architects Daughter","in","tidy architect hand",false],
+  ["'Indie Flower',cursive","400","Indie Flower","in","casual, thin",false],
+  ["'Gochi Hand',cursive","400","Gochi Hand","in","marker, bold",false],
+  ["'Schoolbell',cursive","400","Schoolbell","in","neat school print",false],
+];
+const script = [
+  ["'Caveat Brush',cursive","400","Caveat Brush","in","bolder brush Caveat",false],
+  ["'Sriracha',cursive","400","Sriracha","in","smooth marker",false],
+  ["'Permanent Marker',cursive","400","Permanent Marker","in","bold marker",false],
+  ["'Pacifico',cursive","400","Pacifico","in","connected script",false],
+  ["'Satisfy',cursive","400","Satisfy","in","connected script",false],
+  ["'Kaushan Script',cursive","400","Kaushan Script","in","brush script",false],
+  ["'Gloria Hallelujah',cursive","400","Gloria Hallelujah","in","loopy hand",false],
+];
+const card = (ff,wt,name,canva,note,pick) => `
+  <div class="card">
+    <div class="meta">
+      <span class="name">${name}${pick?'<span class="tag rec">pick</span>':''}</span>
+      <span class="note"><span class="tag ${canva}">${canva==='in'?'in Canva':'not in Canva'}</span>${note}</span>
+    </div>
+    <div class="sample" style="font-family:${ff};font-weight:${wt};">
+      <p class="eyebrow" style="font-family:${ff};font-weight:${wt};">${SAMPLE.eyebrow}</p>
+      <p class="title" style="font-weight:${wt};">${SAMPLE.title}</p>
+      <p class="sub" style="font-weight:${wt};">${SAMPLE.sub}</p>
+      <div class="rule"></div>
+      <div class="step"><div class="badge">1</div><div><p class="label" style="font-family:${ff};font-weight:${wt};">${SAMPLE.label}</p><p class="frag" style="font-family:${ff};font-weight:${wt};">${SAMPLE.frag}</p></div></div>
+    </div>
+  </div>`;
+const render = a => a.map(f => card(...f)).join('');
+// narrow body companions — paired with a Nunito header
+const narrow = [
+  ["'Barlow Semi Condensed',sans-serif","500","Barlow Semi Condensed","in","rounded terminals + semi-condensed — best body pair",true],
+  ["'Roboto Condensed',sans-serif","400","Roboto Condensed","in","neutral classic narrow body",false],
+  ["'Barlow Condensed',sans-serif","500","Barlow Condensed","in","narrower — labels & captions",false],
+  ["'Saira Condensed',sans-serif","500","Saira Condensed","in","geometric narrow, modern",false],
+];
+const BODY = "Most people stall on Claude because they skip the setup, not because it's hard. Twenty minutes gets a desktop app that knows your context, the right plugins for your role, and a workflow you'll keep.";
+const narrowCard = (ff,wt,name,canva,note,pick) => `
+  <div class="card">
+    <div class="meta">
+      <span class="name">${name}${pick?'<span class="tag rec">pick</span>':''}</span>
+      <span class="note"><span class="tag ${canva}">${canva==='in'?'in Canva':'not in Canva'}</span>${note}</span>
+    </div>
+    <div class="sample">
+      <p class="eyebrow" style="font-family:'Nunito',sans-serif;font-weight:800;">${SAMPLE.eyebrow}</p>
+      <p class="title" style="font-family:'Nunito',sans-serif;font-weight:800;color:var(--ink);">${SAMPLE.title}</p>
+      <div class="rule"></div>
+      <p style="font-family:${ff};font-weight:${wt};font-size:19px;line-height:1.45;color:var(--body);margin:0;">${BODY}</p>
+    </div>
+  </div>`;
+document.getElementById('g-round').innerHTML = render(round);
+document.getElementById('g-hand').innerHTML = render(hand);
+document.getElementById('g-script').innerHTML = render(script);
+document.getElementById('g-narrow').innerHTML = narrow.map(f=>narrowCard(...f)).join('');
+</script>
+</body>
+</html>

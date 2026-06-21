@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboard to Claude in 20 Minutes</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#6B2FD0; --secondary:#8B5CF6; --lav:#F0EBFF;
+    --canvas:#F9F9F5; --card:#FFFFFF;
+    --ink:#1F2937; --body:#4B5563; --muted:#6B7280; --sep:#E5E7EB;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#EDEDE7;font-family:'Nunito',sans-serif;display:flex;justify-content:center;padding:40px;}
+  .infographic{
+    width:800px;background:var(--canvas);border-radius:16px;overflow:hidden;
+    box-shadow:0 0 0 1px var(--sep), 0 18px 50px rgba(31,41,55,.10);
+  }
+  .ig-banner{padding:42px 40px 0;}
+  .eyebrow{font-family:'Nunito',sans-serif;font-size:18px;font-weight:800;color:var(--accent);letter-spacing:.4px;margin:0 0 8px;text-transform:uppercase;}
+  .ig-title{font-family:'Nunito',sans-serif;font-size:52px;font-weight:900;color:var(--ink);line-height:1.02;margin:0 0 8px;}
+  .ig-sub{font-family:'Nunito',sans-serif;font-size:24px;font-weight:600;color:var(--body);margin:0 0 22px;}
+  .ig-banner::after{content:'';display:block;border-bottom:2px solid var(--accent);margin:0;}
+  .steps{padding:30px 40px 8px;display:flex;flex-direction:column;gap:14px;}
+  .step{
+    display:flex;align-items:center;gap:20px;background:var(--card);
+    border-radius:14px;padding:18px 22px;box-shadow:0 0 0 1px var(--sep);
+  }
+  .badge{
+    flex:0 0 auto;width:54px;height:54px;border-radius:50%;
+    background:var(--accent);color:#fff;font-family:'Nunito',sans-serif;font-size:30px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step:nth-child(even) .badge{background:var(--secondary);}
+  .step .label{font-family:'Nunito',sans-serif;font-size:29px;font-weight:800;color:var(--ink);line-height:1.05;margin:0;}
+  .step .frag{font-family:'Barlow Semi Condensed',sans-serif;font-size:23px;font-weight:500;color:var(--muted);margin:3px 0 0;letter-spacing:.2px;}
+  .ig-rule{
+    margin:18px 40px 4px;border-left:3px solid var(--accent);
+    padding:6px 16px;font-family:'Barlow Semi Condensed',sans-serif;font-size:25px;font-weight:600;color:var(--body);font-style:italic;
+  }
+  .ig-footer{
+    margin-top:20px;border-top:1px solid var(--sep);
+    padding:16px 40px 26px;display:flex;justify-content:space-between;align-items:center;
+    font-family:'Barlow Semi Condensed',sans-serif;font-size:20px;color:#9CA3AF;font-weight:500;letter-spacing:.3px;
+  }
+</style>
+</head>
+<body>
+<div class="infographic" id="infographic" data-document-role="page" data-label="Onboard to Claude in 20 Minutes">
+  <div class="ig-banner">
+    <p class="eyebrow">Build to Launch</p>
+    <h1 class="ig-title">Onboard to Claude in 20 Minutes</h1>
+    <p class="ig-sub">No learning curve — the right 20-minute setup</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="badge">1</div><div><p class="label">Set up Claude Desktop</p><p class="frag">Under 10 minutes</p></div></div>
+    <div class="step"><div class="badge">2</div><div><p class="label">Get Claude to know you</p><p class="frag">No more starting from zero</p></div></div>
+    <div class="step"><div class="badge">3</div><div><p class="label">Know the layers</p><p class="frag">Cowork · Skills · Plugins · Connectors</p></div></div>
+    <div class="step"><div class="badge">4</div><div><p class="label">Install the right plugin first</p><p class="frag">By your role</p></div></div>
+    <div class="step"><div class="badge">5</div><div><p class="label">Roll it out to a team</p><p class="frag">No training program</p></div></div>
+  </div>
+  <p class="ig-rule">20 minutes to set up. Hours saved every week.</p>
+  <div class="ig-footer">
+    <span>Build to Launch · buildtolaunch.substack.com</span>
+    <span>Jenny Ouyang</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<div style="padding:16px;text-align:center;">
+  <button onclick="exportPNG()" style="background:#6B2FD0;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:sans-serif;">Download PNG</button>
+</div>
+<script>
+async function exportPNG(){
+  const ig=document.getElementById('infographic');
+  await document.fonts.ready; await new Promise(r=>setTimeout(r,200));
+  const canvas=await html2canvas(ig,{scale:2,backgroundColor:null,useCORS:true,allowTaint:true,logging:false});
+  const link=document.createElement('a'); link.download='ig-onboard-claude.png';
+  link.href=canvas.toDataURL('image/png'); link.click();
+}
+</script>
+</body>
+</html>

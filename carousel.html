@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboard to Claude — Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--lav:#F0EBFF;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--sep:#E5E7EB;}
+  *{box-sizing:border-box;margin:0;}
+  body{font-family:'Nunito',sans-serif;background:#EDEDE7;display:flex;flex-wrap:wrap;gap:20px;padding:20px;}
+  .page{position:relative;width:1080px;height:1350px;background:var(--canvas);overflow:hidden;}
+  .accent{position:absolute;top:0;left:0;width:1080px;height:18px;background:var(--accent);}
+  .content{position:absolute;inset:0;padding:120px 96px;display:flex;flex-direction:column;}
+  .eyebrow{font-size:30px;font-weight:800;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:40px;}
+  .cover-title{font-size:90px;font-weight:900;color:var(--ink);line-height:1.04;}
+  .cover-title .hl{color:var(--accent);}
+  .bignum{font-size:200px;font-weight:900;color:var(--lav);line-height:.9;margin-bottom:10px;}
+  .num-badge{display:inline-flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:50%;background:var(--accent);color:#fff;font-size:70px;font-weight:800;margin-bottom:40px;}
+  .slabel{font-size:74px;font-weight:900;color:var(--ink);line-height:1.05;margin-bottom:24px;}
+  .sdetail{font-family:'Barlow Semi Condensed',sans-serif;font-size:40px;font-weight:500;color:var(--muted);}
+  .cta-title{font-size:78px;font-weight:900;color:var(--ink);line-height:1.08;}
+  .cta-title .hl{color:var(--accent);}
+  .pagetag{position:absolute;right:96px;bottom:70px;font-family:'Barlow Semi Condensed',sans-serif;font-size:28px;color:#9B7FC9;font-weight:600;}
+  .spacer{flex:1;}
+</style>
+</head>
+<body>
+
+<div class="page" id="slide-1" data-document-role="page" data-label="Cover">
+  <div class="accent"></div>
+  <div class="content"><div class="eyebrow">Build to Launch</div>
+    <div class="cover-title">Onboard to Claude in <span class="hl">20 minutes</span>, not 20 days.</div>
+    <div class="spacer"></div></div>
+  <div class="pagetag">swipe →</div>
+</div>
+
+<div class="page" id="slide-2" data-document-role="page" data-label="Step 1">
+  <div class="accent"></div>
+  <div class="content"><div class="num-badge">1</div><div class="slabel">Set up Claude Desktop</div><div class="sdetail">Under 10 minutes.</div><div class="spacer"></div></div>
+  <div class="pagetag">1 / 5</div>
+</div>
+
+<div class="page" id="slide-3" data-document-role="page" data-label="Step 2">
+  <div class="accent"></div>
+  <div class="content"><div class="num-badge">2</div><div class="slabel">Get Claude to know you</div><div class="sdetail">No more starting from zero.</div><div class="spacer"></div></div>
+  <div class="pagetag">2 / 5</div>
+</div>
+
+<div class="page" id="slide-4" data-document-role="page" data-label="Step 3">
+  <div class="accent"></div>
+  <div class="content"><div class="num-badge">3</div><div class="slabel">Know the layers</div><div class="sdetail">Cowork · Skills · Plugins · Connectors.</div><div class="spacer"></div></div>
+  <div class="pagetag">3 / 5</div>
+</div>
+
+<div class="page" id="slide-5" data-document-role="page" data-label="Step 4">
+  <div class="accent"></div>
+  <div class="content"><div class="num-badge">4</div><div class="slabel">Install the right plugin first</div><div class="sdetail">By your role.</div><div class="spacer"></div></div>
+  <div class="pagetag">4 / 5</div>
+</div>
+
+<div class="page" id="slide-6" data-document-role="page" data-label="Step 5">
+  <div class="accent"></div>
+  <div class="content"><div class="num-badge">5</div><div class="slabel">Roll it out to a team</div><div class="sdetail">No training program.</div><div class="spacer"></div></div>
+  <div class="pagetag">5 / 5</div>
+</div>
+
+<div class="page" id="slide-7" data-document-role="page" data-label="CTA">
+  <div class="accent"></div>
+  <div class="content"><div class="eyebrow">Build to Launch</div>
+    <div class="spacer"></div>
+    <div class="cta-title">Get the full 5-step setup at <span class="hl">buildtolaunch.ai</span></div>
+    <div class="spacer"></div></div>
+</div>
+
+</body>
+</html>
