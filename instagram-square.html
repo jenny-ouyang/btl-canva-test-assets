@@ -5,26 +5,29 @@
 <title>Onboard to Claude — Instagram Square</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--canvas:#F9F9F5;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--lav:#F0EBFF;}
+  :root{--accent:#6B2FD0;--secondary:#8B5CF6;--canvas:#F9F9F5;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--lav:#F0EBFF;--lav2:#E9DBFF;}
   *{box-sizing:border-box;margin:0;}
   body{font-family:'Nunito',sans-serif;display:inline-block;}
   .page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;}
-  .accent{position:absolute;top:0;left:0;width:16px;height:1080px;background:var(--accent);}
-  .blob{position:absolute;width:520px;height:520px;border-radius:50%;background:var(--lav);right:-150px;bottom:-160px;}
-  .content{position:absolute;inset:0;padding:120px 100px;display:flex;flex-direction:column;justify-content:center;}
-  .eyebrow{font-size:30px;font-weight:800;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:44px;}
-  .quote{font-size:78px;font-weight:900;color:var(--ink);line-height:1.12;margin:0;}
-  .quote .hl{color:var(--accent);}
+  .tex{position:absolute;inset:0;background-image:radial-gradient(#E7DEFA 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.5;z-index:0;}
+  .accent{position:absolute;top:0;left:0;width:16px;height:1080px;background:var(--accent);z-index:2;}
+  .blob{position:absolute;width:520px;height:520px;border-radius:50%;background:var(--lav);right:-150px;bottom:-160px;z-index:0;}
+  .content{position:absolute;inset:0;padding:120px 100px;display:flex;flex-direction:column;justify-content:center;z-index:1;}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:30px;font-weight:800;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:44px;}
+  .edot{width:18px;height:18px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .quote{font-size:78px;font-weight:900;color:var(--ink);line-height:1.16;margin:0;}
+  .quote .hl{background:var(--lav2);color:var(--accent);border-radius:12px;padding:2px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
   .rule{width:120px;height:8px;background:var(--accent);border-radius:4px;margin-top:52px;}
-  .by{position:absolute;left:100px;bottom:84px;font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:600;color:var(--muted);letter-spacing:.5px;}
+  .by{position:absolute;left:100px;bottom:84px;font-family:'Barlow Semi Condensed',sans-serif;font-size:30px;font-weight:600;color:var(--muted);letter-spacing:.5px;z-index:1;}
 </style>
 </head>
 <body>
 <div class="page" data-document-role="page" data-label="Onboard to Claude IG">
+  <div class="tex"></div>
   <div class="blob"></div>
   <div class="accent"></div>
   <div class="content">
-    <div class="eyebrow">Build to Launch</div>
+    <div class="eyebrow"><span class="edot"></span>Build to Launch</div>
     <p class="quote">You don't need a learning curve to use Claude for real work. You need the <span class="hl">right 20-minute setup</span>.</p>
     <div class="rule"></div>
   </div>

@@ -6,50 +6,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --accent:#6B2FD0; --secondary:#8B5CF6; --lav:#F0EBFF;
+    --accent:#6B2FD0; --secondary:#8B5CF6; --lav:#F0EBFF; --lav2:#E9DBFF;
     --canvas:#F9F9F5; --card:#FFFFFF;
     --ink:#1F2937; --body:#4B5563; --muted:#6B7280; --sep:#E5E7EB;
+    --elev:0 0 0 1px #ECE7F5, 0 20px 40px -14px rgba(107,47,208,.22);
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:#EDEDE7;font-family:'Nunito',sans-serif;display:flex;justify-content:center;padding:40px;}
-  .infographic{
-    width:800px;background:var(--canvas);border-radius:16px;overflow:hidden;
-    box-shadow:0 0 0 1px var(--sep), 0 18px 50px rgba(31,41,55,.10);
-  }
-  .ig-banner{padding:42px 40px 0;}
-  .eyebrow{font-family:'Nunito',sans-serif;font-size:18px;font-weight:800;color:var(--accent);letter-spacing:.4px;margin:0 0 8px;text-transform:uppercase;}
-  .ig-title{font-family:'Nunito',sans-serif;font-size:52px;font-weight:900;color:var(--ink);line-height:1.02;margin:0 0 8px;}
-  .ig-sub{font-family:'Nunito',sans-serif;font-size:24px;font-weight:600;color:var(--body);margin:0 0 22px;}
+  body{margin:0;font-family:'Nunito',sans-serif;display:inline-block;}
+  .infographic{position:relative;width:800px;background:var(--canvas);overflow:hidden;}
+  .tex{position:absolute;inset:0;background-image:radial-gradient(#E7DEFA 2px,transparent 2.1px);background-size:38px 38px;opacity:.5;z-index:0;}
+  .infographic > *:not(.tex){position:relative;z-index:1;}
+  .ig-banner{padding:46px 40px 0;}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--accent);letter-spacing:.6px;margin:0 0 10px;text-transform:uppercase;}
+  .edot{width:14px;height:14px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .ig-title{font-size:52px;font-weight:900;color:var(--ink);line-height:1.04;margin:0 0 10px;}
+  .hl{background:var(--lav2);color:var(--accent);border-radius:9px;padding:1px 12px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+  .ig-sub{font-size:24px;font-weight:600;color:var(--body);margin:0 0 22px;}
   .ig-banner::after{content:'';display:block;border-bottom:2px solid var(--accent);margin:0;}
-  .steps{padding:30px 40px 8px;display:flex;flex-direction:column;gap:14px;}
-  .step{
-    display:flex;align-items:center;gap:20px;background:var(--card);
-    border-radius:14px;padding:18px 22px;box-shadow:0 0 0 1px var(--sep);
-  }
-  .badge{
-    flex:0 0 auto;width:54px;height:54px;border-radius:50%;
-    background:var(--accent);color:#fff;font-family:'Nunito',sans-serif;font-size:30px;font-weight:800;
-    display:flex;align-items:center;justify-content:center;
-  }
+  .steps{padding:32px 40px 8px;display:flex;flex-direction:column;gap:16px;}
+  .step{display:flex;align-items:center;gap:22px;background:var(--card);border-radius:16px;padding:20px 24px;box-shadow:var(--elev);}
+  .badge{flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;font-size:30px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 16px rgba(107,47,208,.30);}
   .step:nth-child(even) .badge{background:var(--secondary);}
-  .step .label{font-family:'Nunito',sans-serif;font-size:29px;font-weight:800;color:var(--ink);line-height:1.05;margin:0;}
+  .step .label{font-size:29px;font-weight:800;color:var(--ink);line-height:1.05;margin:0;}
   .step .frag{font-family:'Barlow Semi Condensed',sans-serif;font-size:23px;font-weight:500;color:var(--muted);margin:3px 0 0;letter-spacing:.2px;}
-  .ig-rule{
-    margin:18px 40px 4px;border-left:3px solid var(--accent);
-    padding:6px 16px;font-family:'Barlow Semi Condensed',sans-serif;font-size:25px;font-weight:600;color:var(--body);font-style:italic;
-  }
-  .ig-footer{
-    margin-top:20px;border-top:1px solid var(--sep);
-    padding:16px 40px 26px;display:flex;justify-content:space-between;align-items:center;
-    font-family:'Barlow Semi Condensed',sans-serif;font-size:20px;color:#9CA3AF;font-weight:500;letter-spacing:.3px;
-  }
+  .ig-rule{margin:20px 40px 4px;border-left:4px solid var(--accent);padding:6px 16px;font-family:'Barlow Semi Condensed',sans-serif;font-size:25px;font-weight:600;color:var(--body);font-style:italic;}
+  .ig-footer{margin-top:22px;border-top:1px solid var(--sep);padding:16px 40px 30px;display:flex;justify-content:space-between;align-items:center;font-family:'Barlow Semi Condensed',sans-serif;font-size:20px;color:#9CA3AF;font-weight:500;letter-spacing:.3px;}
 </style>
 </head>
 <body>
-<div class="infographic" id="infographic" data-document-role="page" data-label="Onboard to Claude in 20 Minutes">
+<div class="infographic" data-document-role="page" data-label="Onboard to Claude in 20 Minutes">
+  <div class="tex"></div>
   <div class="ig-banner">
-    <p class="eyebrow">Build to Launch</p>
-    <h1 class="ig-title">Onboard to Claude in 20 Minutes</h1>
+    <p class="eyebrow"><span class="edot"></span>Build to Launch</p>
+    <h1 class="ig-title">Onboard to Claude in <span class="hl">20 Minutes</span></h1>
     <p class="ig-sub">No learning curve — the right 20-minute setup</p>
   </div>
   <div class="steps">
@@ -65,19 +54,5 @@
     <span>Jenny Ouyang</span>
   </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<div style="padding:16px;text-align:center;">
-  <button onclick="exportPNG()" style="background:#6B2FD0;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:sans-serif;">Download PNG</button>
-</div>
-<script>
-async function exportPNG(){
-  const ig=document.getElementById('infographic');
-  await document.fonts.ready; await new Promise(r=>setTimeout(r,200));
-  const canvas=await html2canvas(ig,{scale:2,backgroundColor:null,useCORS:true,allowTaint:true,logging:false});
-  const link=document.createElement('a'); link.download='ig-onboard-claude.png';
-  link.href=canvas.toDataURL('image/png'); link.click();
-}
-</script>
 </body>
 </html>
