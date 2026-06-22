@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- btl-canva-kit surface · chalkboard (1080×1350). Real surface IMAGE (bg element) + handwritten Google fonts (chalk white). Looks AI-sketched, but fully editable. -->
+<html lang="en"><head><meta charset="utf-8"><title>Chalkboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;}
+.page{position:relative;width:1080px;height:1350px;overflow:hidden;}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,28,24,.38),rgba(18,28,24,.16));z-index:1;}
+.wrap{position:relative;z-index:2;padding:96px 90px;color:#F4F4EF;}
+.eyebrow{font-family:'Patrick Hand',cursive;font-size:42px;letter-spacing:3px;color:#CFE3D6;}
+.title{font-family:'Caveat',cursive;font-weight:700;font-size:132px;line-height:1.0;margin:6px 0 44px;color:#FBFBF6;}
+.line{font-family:'Patrick Hand',cursive;font-size:58px;line-height:1.5;color:#EFEFE8;}
+.accent{color:#C9B6F5;}
+.ft{position:absolute;left:90px;bottom:64px;z-index:2;font-family:'Patrick Hand',cursive;font-size:36px;color:#AFC2B6;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Chalkboard">
+  <img class="bg" src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/surfaces/surface_chalkboard.png" alt="chalkboard">
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+    <div class="title">Ship your first MCP</div>
+    <div class="line"><span class="accent">→</span> pick one boring task</div>
+    <div class="line"><span class="accent">→</span> wrap it as one tool</div>
+    <div class="line"><span class="accent">→</span> test it in Claude</div>
+    <div class="line"><span class="accent">→</span> ship + write it up</div>
+  </div>
+  <div class="ft">buildtolaunch.substack.com</div>
+</div>
+</body></html>
