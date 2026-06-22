@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  btl-canva-kit · collage instance — 7 carousel slides, 3 top / 4 bottom.
+  Built from templates/collage.html: BRAND TOKENS (BTL) + TILE STYLE (collage-borders.json: hairline) +
+  BACKGROUND (backgrounds.json: dot-grid). Layout adapted to a 3+4 grid (uniform tiles, rows centered).
+-->
+<html lang="en"><head><meta charset="utf-8"><title>Carousel collage 3+4</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* >>> BRAND TOKENS (BTL) >>> */
+:root{
+  --accent:#6B2FD0; --secondary:#8B5CF6; --canvas:#F9F9F5; --card:#FFFFFF;
+  --ink:#1F2937; --body:#4B5563; --muted:#6B7280; --lav:#F0EBFF; --lav2:#E9DBFF; --sep:#E5E7EB; --tex:#E7DEFA;
+  --headerFont:'Nunito'; --bodyFont:'Barlow Semi Condensed';
+}
+/* >>> TILE STYLE (collage-borders.json: hairline) >>> */
+:root{ --tile-bg:#FFFFFF; --tile-radius:18px; --tile-shadow:0 0 0 1px #ECE7F5, 0 18px 36px -14px rgba(107,47,208,.22); }
+/* ---- locked layout ---- */
+*{box-sizing:border-box;margin:0;}
+body{font-family:var(--headerFont),sans-serif;}
+.page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;padding:64px 64px;display:flex;flex-direction:column;}
+.tex{position:absolute;inset:0;background-image:radial-gradient(var(--tex) 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.5;z-index:0;}
+.eyebrow{position:relative;z-index:1;font-size:28px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+.title{position:relative;z-index:1;font-size:52px;font-weight:900;color:var(--ink);line-height:1.05;margin:8px 0 30px;}
+.title .hl{background:var(--lav2);color:var(--accent);border-radius:10px;padding:2px 12px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+.crow{position:relative;z-index:1;display:flex;justify-content:center;gap:24px;margin-bottom:24px;}
+.ctile{width:220px;background:var(--tile-bg);border-radius:var(--tile-radius);box-shadow:var(--tile-shadow);overflow:hidden;}
+.ctile img{display:block;width:100%;height:auto;}
+.ft{position:absolute;left:64px;bottom:44px;font-family:var(--bodyFont),sans-serif;font-size:26px;font-weight:600;color:#9CA3AF;z-index:2;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Carousel collage">
+  <div class="tex"></div>
+  <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+  <div class="title">Onboard to Claude — <span class="hl">the full carousel</span></div>
+
+  <div class="crow">
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_1.png" alt="slide 1"></div>
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_2.png" alt="slide 2"></div>
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_3.png" alt="slide 3"></div>
+  </div>
+  <div class="crow">
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_4.png" alt="slide 4"></div>
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_5.png" alt="slide 5"></div>
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_6.png" alt="slide 6"></div>
+    <div class="ctile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_7.png" alt="slide 7"></div>
+  </div>
+
+  <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
+</div>
+</body></html>
