@@ -18,7 +18,8 @@
 .tbl{position:relative;z-index:1;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;box-shadow:0 26px 50px -16px rgba(107,47,208,.18);}
 .th{background:var(--accent);color:#fff;font-weight:800;padding:28px 16px;text-align:center;font-size:32px;}
 .th.corner{text-align:left;padding-left:46px;font-size:30px;}
-.rl{background:#fff;padding:28px 30px 28px 46px;font-weight:700;color:var(--ink);font-size:32px;display:flex;align-items:center;justify-content:flex-start;text-align:left;border-top:1px solid var(--sep);}
+.rl{background:#fff;padding:28px 30px 28px 46px;font-weight:700;color:var(--ink);font-size:32px;display:flex;align-items:center;justify-content:flex-start;border-top:1px solid var(--sep);}
+.rll{display:block;width:100%;text-align:left;}
 .cell{background:#fff;padding:26px;text-align:center;font-size:44px;font-weight:800;display:flex;align-items:center;justify-content:center;border-top:1px solid var(--sep);}
 .alt{background:#FAF8FF;}
 .yes{color:var(--accent);} .nope{color:var(--no);} .na{color:#9CA3AF;}
@@ -35,11 +36,11 @@
     <!-- SWAP(column heads): corner + 3 columns -->
     <div class="th corner" style="border-top-left-radius:20px">Capability</div><div class="th">MCP</div><div class="th">Skills</div><div class="th" style="border-top-right-radius:20px">Plugins</div>
     <!-- >>> REPEAT:row — row label + 3 cells. Cell = <div class="cell"><span class="yes">✓</span></div> | nope ✗ | na — . Add class "alt" to label+cells for zebra. >>> -->
-    <div class="rl">Reusable across projects</div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
-    <div class="rl alt">Needs infra / hosting</div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="nope">✗</span></div>
-    <div class="rl">Edits inside chat</div><div class="cell"><span class="nope">✗</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
-    <div class="rl alt">External API access</div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="na">—</span></div>
-    <div class="rl" style="border-bottom-left-radius:20px">Ships in your repo</div><div class="cell"><span class="na">—</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell" style="border-bottom-right-radius:20px"><span class="yes">✓</span></div>
+    <div class="rl"><span class="rll">Reusable across projects</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
+    <div class="rl alt"><span class="rll">Needs infra / hosting</span></div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="nope">✗</span></div>
+    <div class="rl"><span class="rll">Edits inside chat</span></div><div class="cell"><span class="nope">✗</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
+    <div class="rl alt"><span class="rll">External API access</span></div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="na">—</span></div>
+    <div class="rl" style="border-bottom-left-radius:20px"><span class="rll">Ships in your repo</span></div><div class="cell"><span class="na">—</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell" style="border-bottom-right-radius:20px"><span class="yes">✓</span></div>
     <!-- <<< /REPEAT:row -->
   </div>
   <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
