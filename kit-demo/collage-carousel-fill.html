@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Plain packed collage: 7 carousel slides, 3 top / 4 bottom, filling a 1588x1123 canvas. Grey rounded borders, no branding. Tiles are exactly 4:5 (= the slides) so images fit with no crop. -->
+<html lang="en"><head><meta charset="utf-8"><title>Carousel collage (fill)</title>
+<style>
+  *{box-sizing:border-box;margin:0;}
+  .page{position:relative;width:1588px;height:1123px;background:#FFFFFF;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;padding:6px 24px;}
+  .row{display:flex;gap:14px;justify-content:center;}
+  /* ALL 7 tiles identical size (4:5, = the slides' native ratio, so no crop/distortion) */
+  .tile{width:384px;height:480px;border:3px solid #BDBDBD;border-radius:16px;overflow:hidden;background:#FFFFFF;}
+  .tile img{display:block;width:100%;height:100%;object-fit:cover;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Carousel collage fill">
+  <div class="row r1">
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_1.png" alt="1"></div>
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_2.png" alt="2"></div>
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_3.png" alt="3"></div>
+  </div>
+  <div class="row r2">
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_4.png" alt="4"></div>
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_5.png" alt="5"></div>
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_6.png" alt="6"></div>
+    <div class="tile"><img src="https://raw.githubusercontent.com/jenny-ouyang/btl-canva-test-assets/main/kit-demo/cv1/canva-mcp_carousel_v1-flat_7.png" alt="7"></div>
+  </div>
+</div>
+</body></html>
