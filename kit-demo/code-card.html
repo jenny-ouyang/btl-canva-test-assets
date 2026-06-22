@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- btl-canva-kit TEMPLATE · code / prompt card (1080×1080) — dark terminal card, monospace.
+     Dark bg is a full-bleed ELEMENT (.bg), never a CSS page background. Swap zones: 1) BRAND TOKENS  2) CONTENT (title, filename, REPEAT:line, caption). -->
+<html lang="en"><head><meta charset="utf-8"><title>Code card</title>
+<!-- SWAP(fonts): keep a monospace family for the code body -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* >>> BRAND TOKENS >>> */
+:root{--accent:#6B2FD0;--secondary:#8B5CF6;--third:#C4A9F2;--canvas:#F9F9F5;--ink:#1F2937;--muted:#6B7280;--headerFont:'Nunito';--bodyFont:'Barlow Semi Condensed';--monoFont:'JetBrains Mono';
+  --darkbg:#1F2937;--term:#0F172A;--codefg:#E5E7EB;--codekey:#C4A9F2;--codecomment:#7C8AA5;}
+/* <<< END BRAND TOKENS <<< */
+*{box-sizing:border-box;margin:0;}
+.page{position:relative;width:1080px;height:1080px;overflow:hidden;padding:80px 70px;font-family:var(--headerFont),sans-serif;}
+.bg{position:absolute;inset:0;background:var(--darkbg);z-index:0;}
+.eyebrow{position:relative;z-index:1;font-size:26px;font-weight:800;color:var(--third);letter-spacing:2px;text-transform:uppercase;}
+.title{position:relative;z-index:1;font-size:62px;font-weight:900;color:#F8F6FF;line-height:1.04;margin:8px 0 30px;}
+.term{position:relative;z-index:1;background:var(--term);border-radius:20px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);overflow:hidden;}
+.tbar{display:flex;align-items:center;gap:14px;padding:22px 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07);}
+.dot{width:18px;height:18px;border-radius:50%;}
+.fname{margin-left:14px;font-family:var(--monoFont),monospace;font-size:26px;color:#94A3B8;}
+.code{padding:36px 40px;font-family:var(--monoFont),monospace;font-size:31px;line-height:1.65;color:var(--codefg);}
+.ln{white-space:pre-wrap;}
+.cm{color:var(--codecomment);}
+.kw{color:var(--codekey);font-weight:700;}
+.cap{position:relative;z-index:1;font-family:var(--bodyFont),sans-serif;font-size:30px;color:#94A3B8;margin-top:26px;}
+.ft{position:absolute;left:70px;bottom:46px;font-family:var(--bodyFont),sans-serif;font-size:26px;font-weight:600;color:#5B6678;z-index:2;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Code card">
+  <div class="bg"></div>
+  <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+  <!-- SWAP(title) -->
+  <div class="title">The exact prompt</div>
+  <div class="term">
+    <div class="tbar"><div class="dot" style="background:#FF5F56"></div><div class="dot" style="background:#FFBD2E"></div><div class="dot" style="background:#27C93F"></div><div class="fname">prompt.txt</div></div>
+    <!-- >>> REPEAT:line — one .ln per line. Wrap comments in .cm, the command/keyword in .kw. >>> -->
+    <div class="code">
+      <div class="ln cm"># Turn an article into a Canva kit</div>
+      <div class="ln"><span class="kw">Build</span> a 5-step infographic from this post.</div>
+      <div class="ln">Brand: cream #F9F9F5, Nunito, purple #6B2FD0.</div>
+      <div class="ln"><span class="kw">Import</span> it to Canva and export a PNG.</div>
+    </div>
+    <!-- <<< /REPEAT:line -->
+  </div>
+  <!-- SWAP(caption) -->
+  <div class="cap">Paste straight into Claude with the Canva MCP connected.</div>
+  <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
+</div>
+</body></html>

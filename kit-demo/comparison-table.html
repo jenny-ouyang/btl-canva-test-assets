@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- btl-canva-kit TEMPLATE · comparison table (1080×1350) — CSS grid matrix (proven).
+     Swap zones: 1) BRAND TOKENS  2) CONTENT (title/sub, column heads, REPEAT:row). Cells use ✓ / ✗ / — colored glyphs. -->
+<html lang="en"><head><meta charset="utf-8"><title>Comparison table</title>
+<!-- SWAP(fonts) -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* >>> BRAND TOKENS >>> */
+:root{--accent:#6B2FD0;--secondary:#8B5CF6;--third:#C4A9F2;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--lav:#F0EBFF;--lav2:#E9DBFF;--sep:#E5E7EB;--tex:#E7DEFA;--no:#C2410C;--headerFont:'Nunito';--bodyFont:'Barlow Semi Condensed';}
+/* <<< END BRAND TOKENS <<< */
+*{box-sizing:border-box;margin:0;}
+.page{position:relative;width:1080px;height:1350px;background:var(--canvas);overflow:hidden;padding:80px 70px;font-family:var(--headerFont),sans-serif;}
+.tex{position:absolute;inset:0;background-image:radial-gradient(var(--tex) 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.45;z-index:0;}
+.eyebrow{position:relative;z-index:1;font-size:28px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+.title{position:relative;z-index:1;font-size:68px;font-weight:900;color:var(--ink);line-height:1.04;margin:8px 0 6px;}
+.sub{position:relative;z-index:1;font-family:var(--bodyFont),sans-serif;font-size:32px;color:var(--muted);margin-bottom:30px;}
+.tbl{position:relative;z-index:1;display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px var(--sep),0 26px 50px -16px rgba(107,47,208,.18);}
+.th{background:var(--accent);color:#fff;font-weight:800;padding:28px 16px;text-align:center;font-size:32px;}
+.th.corner{text-align:left;padding-left:30px;font-size:30px;}
+.rl{background:#fff;padding:26px 30px;font-weight:700;color:var(--ink);font-size:32px;display:flex;align-items:center;border-top:1px solid var(--sep);}
+.cell{background:#fff;padding:26px;text-align:center;font-size:44px;font-weight:800;display:flex;align-items:center;justify-content:center;border-top:1px solid var(--sep);}
+.alt{background:#FAF8FF;}
+.yes{color:var(--accent);} .nope{color:var(--no);} .na{color:#9CA3AF;}
+.ft{position:absolute;left:70px;bottom:50px;font-family:var(--bodyFont),sans-serif;font-size:28px;font-weight:600;color:#9CA3AF;z-index:2;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Comparison table">
+  <div class="tex"></div>
+  <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+  <!-- SWAP(title/sub) -->
+  <div class="title">MCP vs Skills vs Plugins</div>
+  <div class="sub">Which extends Claude how</div>
+  <div class="tbl">
+    <!-- SWAP(column heads): corner + 3 columns -->
+    <div class="th corner">Capability</div><div class="th">MCP</div><div class="th">Skills</div><div class="th">Plugins</div>
+    <!-- >>> REPEAT:row — row label + 3 cells. Cell = <div class="cell"><span class="yes">✓</span></div> | nope ✗ | na — . Add class "alt" to label+cells for zebra. >>> -->
+    <div class="rl">Reusable across projects</div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
+    <div class="rl alt">Needs infra / hosting</div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="nope">✗</span></div>
+    <div class="rl">Edits inside chat</div><div class="cell"><span class="nope">✗</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
+    <div class="rl alt">External API access</div><div class="cell alt"><span class="yes">✓</span></div><div class="cell alt"><span class="nope">✗</span></div><div class="cell alt"><span class="na">—</span></div>
+    <div class="rl">Ships in your repo</div><div class="cell"><span class="na">—</span></div><div class="cell"><span class="yes">✓</span></div><div class="cell"><span class="yes">✓</span></div>
+    <!-- <<< /REPEAT:row -->
+  </div>
+  <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
+</div>
+</body></html>

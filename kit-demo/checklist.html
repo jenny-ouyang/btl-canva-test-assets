@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- btl-canva-kit TEMPLATE · checklist (1080×1080) — elevated card + ✓ items (proven).
+     Swap zones: 1) BRAND TOKENS  2) CONTENT (title/sub + REPEAT:item). -->
+<html lang="en"><head><meta charset="utf-8"><title>Checklist</title>
+<!-- SWAP(fonts) -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* >>> BRAND TOKENS >>> */
+:root{--accent:#6B2FD0;--secondary:#8B5CF6;--third:#C4A9F2;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--lav:#F0EBFF;--lav2:#E9DBFF;--sep:#E5E7EB;--tex:#E7DEFA;--headerFont:'Nunito';--bodyFont:'Barlow Semi Condensed';}
+/* <<< END BRAND TOKENS <<< */
+*{box-sizing:border-box;margin:0;}
+.page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;padding:70px;font-family:var(--headerFont),sans-serif;}
+.tex{position:absolute;inset:0;background-image:radial-gradient(var(--tex) 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.45;z-index:0;}
+.eyebrow{position:relative;z-index:1;font-size:26px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+.title{position:relative;z-index:1;font-size:60px;font-weight:900;color:var(--ink);line-height:1.04;margin:8px 0 6px;}
+.sub{position:relative;z-index:1;font-family:var(--bodyFont),sans-serif;font-size:30px;color:var(--muted);margin-bottom:26px;}
+.clist{position:relative;z-index:1;background:#fff;border-radius:24px;box-shadow:0 0 0 1px #ECE7F5,0 26px 50px -16px rgba(107,47,208,.2);padding:20px 44px;}
+.citem{display:flex;align-items:flex-start;gap:26px;padding:28px 0;border-top:1px solid var(--sep);}
+.citem:first-child{border-top:none;}
+.cbox{width:60px;height:60px;border-radius:14px;background:var(--lav);color:var(--accent);font-weight:900;font-size:34px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.ctext{font-size:38px;font-weight:800;color:var(--ink);line-height:1.15;}
+.csub{font-family:var(--bodyFont),sans-serif;font-size:28px;font-weight:600;color:var(--muted);margin-top:4px;}
+.ft{position:absolute;left:70px;bottom:46px;font-family:var(--bodyFont),sans-serif;font-size:26px;font-weight:600;color:#9CA3AF;z-index:2;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Checklist">
+  <div class="tex"></div>
+  <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+  <!-- SWAP(title/sub) -->
+  <div class="title">Your first MCP: the checklist</div>
+  <div class="sub">Ship it in a weekend</div>
+  <!-- >>> REPEAT:item — accent ✓ box + bold text + optional .csub line >>> -->
+  <div class="clist">
+    <div class="citem"><div class="cbox">✓</div><div><div class="ctext">Pick one job to automate</div><div class="csub">One input, one output</div></div></div>
+    <div class="citem"><div class="cbox">✓</div><div><div class="ctext">Scaffold from the SDK template</div><div class="csub">Don't start from a blank file</div></div></div>
+    <div class="citem"><div class="cbox">✓</div><div><div class="ctext">Expose one tool first</div><div class="csub">Add more once it works</div></div></div>
+    <div class="citem"><div class="cbox">✓</div><div><div class="ctext">Test it in Claude</div><div class="csub">Real prompt, real output</div></div></div>
+    <div class="citem"><div class="cbox">✓</div><div><div class="ctext">Ship + write it up</div><div class="csub">Build in public</div></div></div>
+  </div>
+  <!-- <<< /REPEAT:item -->
+  <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
+</div>
+</body></html>

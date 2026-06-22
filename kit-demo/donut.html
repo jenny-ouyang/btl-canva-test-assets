@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- btl-canva-kit TEMPLATE · donut (1080×1080) — SVG stroke-dasharray chart (proven to survive import).
+     Swap zones: 1) BRAND TOKENS  2) CONTENT (title/sub + the 3 segment values + legend REPEAT). -->
+<html lang="en"><head><meta charset="utf-8"><title>Donut</title>
+<!-- SWAP(fonts): replace with profile googleFontsHref -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* >>> BRAND TOKENS — swap from profile (defaults = BTL) >>> */
+:root{--accent:#6B2FD0;--secondary:#8B5CF6;--third:#C4A9F2;--canvas:#F9F9F5;--card:#FFFFFF;--ink:#1F2937;--body:#4B5563;--muted:#6B7280;--lav:#F0EBFF;--lav2:#E9DBFF;--sep:#E5E7EB;--tex:#E7DEFA;--track:#EFEAF8;--headerFont:'Nunito';--bodyFont:'Barlow Semi Condensed';}
+/* <<< END BRAND TOKENS <<< */
+*{box-sizing:border-box;margin:0;}
+.page{position:relative;width:1080px;height:1080px;background:var(--canvas);overflow:hidden;padding:70px;font-family:var(--headerFont),sans-serif;}
+.tex{position:absolute;inset:0;background-image:radial-gradient(var(--tex) 2.5px,transparent 2.6px);background-size:46px 46px;opacity:.45;z-index:0;}
+.eyebrow{position:relative;z-index:1;font-size:26px;font-weight:800;color:var(--accent);letter-spacing:2px;text-transform:uppercase;}
+.title{position:relative;z-index:1;font-size:60px;font-weight:900;color:var(--ink);line-height:1.04;margin:8px 0 6px;}
+.sub{position:relative;z-index:1;font-family:var(--bodyFont),sans-serif;font-size:30px;color:var(--muted);margin-bottom:24px;}
+.stage{position:relative;z-index:1;}
+.do-wrap{display:flex;align-items:center;gap:64px;margin-top:40px;}
+.leg{display:flex;flex-direction:column;gap:30px;}
+.leg-row{display:flex;align-items:center;gap:18px;font-size:34px;font-weight:700;color:var(--ink);}
+.sw{width:30px;height:30px;border-radius:8px;flex:0 0 auto;}
+.leg-val{font-family:var(--bodyFont),sans-serif;font-weight:600;color:var(--muted);font-size:30px;margin-left:6px;}
+.ft{position:absolute;left:70px;bottom:46px;font-family:var(--bodyFont),sans-serif;font-size:26px;font-weight:600;color:#9CA3AF;z-index:2;}
+</style></head>
+<body>
+<div class="page" data-document-role="page" data-label="Donut">
+  <div class="tex"></div>
+  <div class="eyebrow">●&nbsp;&nbsp;Build to Launch</div>
+  <!-- SWAP(title/sub) -->
+  <div class="title">Where your Claude tokens go</div>
+  <div class="sub">A typical long agent session</div>
+  <div class="stage do-wrap">
+    <!-- SWAP(segments): set each circle's stroke-dasharray "<value> <100-value>" and stroke-dashoffset = -<cumulative prior>. Colors = accent/secondary/third. -->
+    <svg width="380" height="380" viewBox="0 0 42 42">
+      <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--track)" stroke-width="6"/>
+      <g transform="rotate(-90 21 21)">
+        <circle cx="21" cy="21" r="15.915" fill="none" stroke="#6B2FD0" stroke-width="6" stroke-dasharray="55 45" stroke-dashoffset="0"/>
+        <circle cx="21" cy="21" r="15.915" fill="none" stroke="#8B5CF6" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="-55"/>
+        <circle cx="21" cy="21" r="15.915" fill="none" stroke="#C4A9F2" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="-85"/>
+      </g>
+      <text x="21" y="20.5" text-anchor="middle" font-size="6" font-weight="800" fill="#1F2937" font-family="Nunito">100%</text>
+      <text x="21" y="25" text-anchor="middle" font-size="2.6" fill="#6B7280" font-family="Barlow Semi Condensed">tokens</text>
+    </svg>
+    <!-- >>> REPEAT:segment — one legend row per donut segment (swatch color = its stroke color; label; value) >>> -->
+    <div class="leg">
+      <div class="leg-row"><div class="sw" style="background:#6B2FD0"></div><div>Context &amp; files</div><div class="leg-val">55%</div></div>
+      <div class="leg-row"><div class="sw" style="background:#8B5CF6"></div><div>Tool calls</div><div class="leg-val">30%</div></div>
+      <div class="leg-row"><div class="sw" style="background:#C4A9F2"></div><div>Final output</div><div class="leg-val">15%</div></div>
+    </div>
+    <!-- <<< /REPEAT:segment -->
+  </div>
+  <div class="ft">Build to Launch · buildtolaunch.substack.com</div>
+</div>
+</body></html>
